@@ -94,7 +94,7 @@ function ippy_bcq_setting_input() {
 	
 	// echo the field
 	?>
-<p><?php if ( function_exists('is_bbpress') { ?>
+<p><?php if ( function_exists('is_bbpress') ) { ?>
 <input id='bbpress' name='ippy_bcq_options[bbpress]' type='checkbox' value='<?php echo $valuebb; ?>' <?php if ( ( $valuebb != '0') && !is_null($valuebb) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags on bbPress<br /> <?php } ?>
 <input id='comments' name='ippy_bcq_options[comments]' type='checkbox' value='<?php echo $valuebb; ?>' <?php if ( ( $valueco != '0') && !is_null($valueco) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags on comments
 	<?php
