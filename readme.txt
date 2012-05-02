@@ -3,7 +3,7 @@ Contributors: Ipstenu, MarcDK
 Tags: comments, wysiwyg, quicktags, bbpress
 Requires at least: 3.3
 Tested up to: 3.4
-Stable tag: 1.0
+Stable tag: 1.1
 
 Displays bold, italic, add link and quote buttons on top of the comment form.
 
@@ -11,7 +11,7 @@ Displays bold, italic, add link and quote buttons on top of the comment form.
 
 This plugin displays the most basic of quicktag buttons on your comment forms, using the Quicktag API built into WordPress (as of 3.3).
 
-You can turn these on and off on the discussions page (see the screenshots).
+You can turn these on and off for bbPress or comments on the discussions page (see the screenshots).
 
 **Misc**
 
@@ -38,12 +38,16 @@ No. This plugin uses the <a href="http://codex.wordpress.org/Quicktags_API">Quic
 
 Yes. It can be network activated or per-site, works fine.
 
+= Will you expand this to BuddyPress? =
+
+Eventually. I'm not using it right now so it's not <em>as</em> easy to test.
+
 == Changelog ==
 
 = 1.1 = 
 * 2012 May 02, by Ipstenu
-* Adding options to turn on and off for both comments <em>and</em> bbPress (per request of leeuniverse)
-* Fixed IE being an asshat (props trepmal)
+* Added options to turn on and off for both comments <em>and</em> bbPress (per request of leeuniverse) - You will <em>only</em> see the bbPress box if you have bbPress installed (so as not to confuse people).
+* Fixed IE being an asshat (props trepmal).
 
 = 1.0 =
 * 2012 April 27, by Ipstenu
@@ -51,6 +55,17 @@ Yes. It can be network activated or per-site, works fine.
 * Added in support for bbPress
 * Added in checks to only load JS/CSS when on a page where one might leave comments
 * Added failure if not WordPress 3.3 or greater
+
+== Upgrade Notice ==
+
+= 1.1 =
+Please visit your <em>Discussion Settings</em> page and check the box to turn on the plugin.
+
+== Installation ==
+
+1. Install and activate the plugin.
+2. Visit your <em>Discussion Settings</em> page.
+3. Look for 'Quicktags' and check boxes as desired.
 
 == Screenshots ==
 

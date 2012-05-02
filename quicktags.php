@@ -14,14 +14,14 @@
 
     This file is part of Basic Comment Quicktags, a plugin for WordPress.
 
-    Basic Comment Quicktags is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 2 of the License, or
+    Basic Comment Quicktags is free software: you can redistribute it and/or 
+	modify it under the terms of the GNU General Public License as published 
+	by the Free Software Foundation, either version 2 of the License, or
     (at your option) any later version.
 
-    Basic Comment Quicktags is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    Basic Comment Quicktags is distributed in the hope that it will be
+    useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+    of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
@@ -40,18 +40,16 @@ $valueco = $options['comments'];
 
   if ( function_exists('is_bbpress') && ( $valuebb != '0') && !is_null($valuebb) ) {
 	  if ( ( comments_open() && is_singular() || is_bbpress() ) ) {
-	    ippy_bcq_the_scripts();
+	    wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
+	    wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
+	    wp_print_styles('editor-buttons');
 	}
   }
   elseif ( comments_open() && is_singular() && ( $valueco != '0') && !is_null($valueco) ) {
-	    ippy_bcq_the_scripts();
+	    wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
+	    wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
+	    wp_print_styles('editor-buttons');
   }
-}
-
-function ippy_bcq_the_scripts() {
-    wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"),  1);
-    wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false);
-	wp_print_styles('editor-buttons');
 }
 
 if( !is_admin() ) {
@@ -96,7 +94,8 @@ function ippy_bcq_setting_input() {
 	
 	// echo the field
 	?>
-<input id='bbpress' name='ippy_bcq_options[bbpress]' type='checkbox' value='<?php echo $valuebb; ?>' <?php if ( ( $valuebb != '0') && !is_null($valuebb) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags on bbPress<br />
+<p><?php if ( function_exists('is_bbpress') { ?>
+<input id='bbpress' name='ippy_bcq_options[bbpress]' type='checkbox' value='<?php echo $valuebb; ?>' <?php if ( ( $valuebb != '0') && !is_null($valuebb) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags on bbPress<br /> <?php } ?>
 <input id='comments' name='ippy_bcq_options[comments]' type='checkbox' value='<?php echo $valuebb; ?>' <?php if ( ( $valueco != '0') && !is_null($valueco) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags on comments
 	<?php
 }
