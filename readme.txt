@@ -11,11 +11,12 @@ Displays bold, italic, add link and quote buttons on top of the comment form.
 
 This plugin displays the most basic of quicktag buttons on your comment forms, using the Quicktag API built into WordPress (as of 3.3).
 
+You can turn these on and off on the discussions page (see the screenshots).
+
 **Misc**
 
 * [Plugin Site](http://halfelf.org/plugins/basic-comment-quicktags/)
 * [Donate](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973)
-
 
 == Frequently Asked Questions ==
 
@@ -39,6 +40,11 @@ Yes. It can be network activated or per-site, works fine.
 
 == Changelog ==
 
+= 1.1 = 
+* 2012 May 02, by Ipstenu
+* Adding options to turn on and off for both comments <em>and</em> bbPress (per request of leeuniverse)
+* Fixed IE being an asshat (props trepmal)
+
 = 1.0 =
 * 2012 April 27, by Ipstenu
 * Initial fork of MarcTV Comment QuickTag
@@ -49,3 +55,4 @@ Yes. It can be network activated or per-site, works fine.
 == Screenshots ==
 
 1. The Quicktags
+2. The Options

@@ -1,17 +1,17 @@
-(function ($) {
-  $(document).ready(function($) {
-    new QTags({
+// (function ($) {
+//   $(document).ready(function($) {
+    quicktags({
       id: "comment",
       buttons: "link,em,strong"
     });
-    new QTags({
+    quicktags({
       id: "bbp_reply_content",
       buttons: "link,em,strong"
     });
-    new QTags({
+    quicktags({
       id: "bbp_topic_content",
       buttons: "link,em,strong"
     });
     QTags.addButton('quote','quote','<blockquote>','</blockquote>','quote');
-  });
-})(jQuery);
+//   });
+// })(jQuery);

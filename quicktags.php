@@ -14,12 +14,12 @@
 
     This file is part of Basic Comment Quicktags, a plugin for WordPress.
 
-    Impostercide is free software: you can redistribute it and/or modify
+    Basic Comment Quicktags is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 2 of the License, or
     (at your option) any later version.
 
-    Impostercide is distributed in the hope that it will be useful,
+    Basic Comment Quicktags is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
@@ -32,7 +32,6 @@ global $wp_version;
 $exit_msg_ver = 'This plugin requires WordPress 3.3';
 if (version_compare($wp_version,"3.3","<")) { exit($exit_msg_ver); }
 
-
 function ippy_bcq_add_scripts() {
 
 $options = get_option('ippy_bcq_options');
@@ -41,16 +40,18 @@ $valueco = $options['comments'];
 
   if ( function_exists('is_bbpress') && ( $valuebb != '0') && !is_null($valuebb) ) {
 	  if ( ( comments_open() && is_singular() || is_bbpress() ) ) {
-	    wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
-	    wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
-	    wp_print_styles('editor-buttons');
+	    ippy_bcq_the_scripts();
 	}
   }
   elseif ( comments_open() && is_singular() && ( $valueco != '0') && !is_null($valueco) ) {
-	    wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
-	    wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
-	    wp_print_styles('editor-buttons');
+	    ippy_bcq_the_scripts();
   }
+}
+
+function ippy_bcq_the_scripts() {
+    wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"),  1);
+    wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false);
+	wp_print_styles('editor-buttons');
 }
 
 if( !is_admin() ) {
