@@ -3,7 +3,7 @@
   Plugin Name: Basic Comment Quicktags
   Plugin URI: http://halfelf.org/plugins/basic-comment-quicktags/
   Description: Displays a bold, italic, add link and quote button on top of the comment form
-  Version: 1.0
+  Version: 1.1
   Author: Mika "Ipstenu" Epstein
   Author URI: http://ipstenu.org
   Stable tag: 1.0
@@ -33,31 +33,69 @@ $exit_msg_ver = 'This plugin requires WordPress 3.3';
 if (version_compare($wp_version,"3.3","<")) { exit($exit_msg_ver); }
 
 
-function bcq_add_scripts() {
-  if ( function_exists('is_bbpress') ) {
+function ippy_bcq_add_scripts() {
+
+$options = get_option('ippy_bcq_options');
+$valuebb = $options['bbpress'];
+$valueco = $options['comments'];
+
+  if ( function_exists('is_bbpress') && ( $valuebb != '0') && !is_null($valuebb) ) {
 	  if ( ( comments_open() && is_singular() || is_bbpress() ) ) {
 	    wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
 	    wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
 	    wp_print_styles('editor-buttons');
 	}
   }
-  elseif ( comments_open() && is_singular() ) {
+  elseif ( comments_open() && is_singular() && ( $valueco != '0') && !is_null($valueco) ) {
 	    wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
 	    wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
 	    wp_print_styles('editor-buttons');
   }
 }
 
-if ( !is_admin() ) {
-  add_action('wp_print_styles', 'bcq_add_scripts');
+if( !is_admin() ) {
+	add_action('wp_print_styles', 'ippy_bcq_add_scripts');
 }
 
 // donate link on manage plugin page
-add_filter('plugin_row_meta', 'bcq_donate_link', 10, 2);
-function bcq_donate_link($links, $file) {
+add_filter('plugin_row_meta', 'ippy_bcq_donate_link', 10, 2);
+function ippy_bcq_donate_link($links, $file) {
         if ($file == plugin_basename(__FILE__)) {
                 $donate_link = '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ipstenu%40ipstenu%2eorg">Donate</a>';
                 $links[] = $donate_link;
         }
         return $links;
+}
+
+// Register and define the settings
+add_action('admin_init', 'ippy_bcq_admin_init');
+
+function ippy_bcq_admin_init(){
+
+	register_setting(
+		'discussion',               // settings page
+		'ippy_bcq_options'          // option name
+	);
+	
+	add_settings_field(
+		'ippy_bcq_bbpress',         // id
+		'Quicktags',                // setting title
+		'ippy_bcq_setting_input',   // display callback
+		'discussion',               // settings page
+		'default'                   // settings section
+	);
+}
+
+// Display and fill the form field
+function ippy_bcq_setting_input() {
+	// get option value from the database
+	$options = get_option( 'ippy_bcq_options' );
+	$valuebb = $options['bbpress'];
+	$valueco = $options['comments'];
+	
+	// echo the field
+	?>
+<input id='bbpress' name='ippy_bcq_options[bbpress]' type='checkbox' value='<?php echo $valuebb; ?>' <?php if ( ( $valuebb != '0') && !is_null($valuebb) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags on bbPress<br />
+<input id='comments' name='ippy_bcq_options[comments]' type='checkbox' value='<?php echo $valuebb; ?>' <?php if ( ( $valueco != '0') && !is_null($valueco) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags on comments
+	<?php
 }
