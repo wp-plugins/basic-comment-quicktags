@@ -42,6 +42,10 @@ Yes. It can be network activated or per-site, works fine.
 
 Eventually. I'm not using it right now so it's not <em>as</em> easy to test.
 
+= My users say they don't see anything on IE8 =
+
+Yeah, that's because IE8 cheerfully ignores the rules of jQuery. Sometimes it works, sometimes it doesn't. I got it to work, and then came back an hour later to no changes and it broke. At which point I bashed my head into the wall and went to the gym. Between caching and IE8 being inconsistant, I gave up. If anyone can fix it for everyone better than Trepmal did, you officially win. This is as good as I can get it. It works like a hero on Firefox, Safari, Chrome and IE9.
+
 == Changelog ==
 
 = 1.1 = 
