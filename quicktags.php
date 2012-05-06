@@ -38,8 +38,8 @@ $options = get_option('ippy_bcq_options');
 $valuebb = $options['bbpress'];
 $valueco = $options['comments'];
 
-  if ( function_exists('is_bbpress') && ( $valuebb != '0') && !is_null($valuebb) ) {
-	  if ( ( comments_open() && is_singular() || is_bbpress() ) ) {
+  if ( function_exists('is_bbpress') ) {
+	  if ( ( comments_open() && is_singular() || is_bbpress() )  && ( $valuebb != '0') && !is_null($valuebb) ) {
 	    wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
 	    wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
 	    wp_print_styles('editor-buttons');
