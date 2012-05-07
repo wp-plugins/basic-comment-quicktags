@@ -3,7 +3,8 @@ Contributors: Ipstenu, MarcDK
 Tags: comments, wysiwyg, quicktags, bbpress
 Requires at least: 3.3
 Tested up to: 3.4
-Stable tag: 1.1
+Stable tag: 1.2
+License: GPL2
 
 Displays bold, italic, add link and quote buttons on top of the comment form.
 
@@ -11,7 +12,7 @@ Displays bold, italic, add link and quote buttons on top of the comment form.
 
 This plugin displays the most basic of quicktag buttons on your comment forms, using the Quicktag API built into WordPress (as of 3.3).
 
-You can turn these on and off for bbPress or comments on the discussions page (see the screenshots).
+You can turn these on and off for bbPress or comments on the discussions page (see the screenshots). Please note, the plugin defaults to <em>off</em>, so you have to go turn them on. Auto-activating isn't nice, as it may conflict with other plugins.
 
 **Misc**
 
@@ -30,6 +31,10 @@ I forked it so I could extend it to bbPress, put in more checks and ifs/thens, a
 
 After careful consideration, and a long review of my users, those are the only ones they ever use! If you have a reasonable argument why I should add in others, I'll listen.
 
+= Will you add in options to pick and chose our tags? =
+
+Not at this time (and not likely either). I don't have a need for it, and I don't want to include code I'm not going to personally make use of. It makes it much harder on me to support it later. (Read <a href="http://www.sohar.com/proj_pub/download/COMPAS93.pdf">Herbert Hecht's article "Rare Conditions – An Important Cause of Failures"</a> to understand my views on including rarely used code. tl;dr: I try not to.)
+
 = Can I use this on older versions of WordPress? =
 
 No. This plugin uses the <a href="http://codex.wordpress.org/Quicktags_API">Quicktags API</a> built in to WordPress 3.3.
@@ -47,6 +52,10 @@ Eventually. I'm not using it right now so it's not <em>as</em> easy to test.
 Yeah, that's because IE8 cheerfully ignores the rules of jQuery. Sometimes it works, sometimes it doesn't. I got it to work, and then came back an hour later to no changes and it broke. At which point I bashed my head into the wall and went to the gym. Between caching and IE8 being inconsistant, I gave up. If anyone can fix it for everyone better than Trepmal did, you officially win. This is as good as I can get it. It works like a hero on Firefox, Safari, Chrome and IE9.
 
 == Changelog ==
+
+= 1.2 =
+* 2012 May 07, by Ipstenu
+* bbPress is strange, should work now.
 
 = 1.1 = 
 * 2012 May 02, by Ipstenu
