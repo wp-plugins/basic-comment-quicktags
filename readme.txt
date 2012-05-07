@@ -78,7 +78,7 @@ Please visit your <em>Discussion Settings</em> page and check the box to turn on
 
 1. Install and activate the plugin.
 2. Visit your <em>Discussion Settings</em> page.
-3. Look for 'Quicktags' and check boxes as desired.
+3. Look for 'Quicktags' and check boxes as desired. (Comments are activated by default)
 
 == Screenshots ==
 
