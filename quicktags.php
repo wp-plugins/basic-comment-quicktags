@@ -3,7 +3,7 @@
   Plugin Name: Basic Comment Quicktags
   Plugin URI: http://halfelf.org/plugins/basic-comment-quicktags/
   Description: Displays a bold, italic, add link and quote button on top of the comment form
-  Version: 1.2
+  Version: 1.3
   Author: Mika "Ipstenu" Epstein
   Author URI: http://ipstenu.org
 
@@ -71,7 +71,8 @@ function ippy_bcq_admin_init(){
 
 	register_setting(
 		'discussion',               // settings page
-		'ippy_bcq_options'          // option name
+		'ippy_bcq_options',         // option name
+		'ippy_bcq_validate_options' // validation callback
 	);
 	
 	add_settings_field(
@@ -81,6 +82,11 @@ function ippy_bcq_admin_init(){
 		'discussion',               // settings page
 		'default'                   // settings section
 	);
+}
+
+register_activation_hook( __FILE__, 'ippy_bcq_activate' );
+
+function ippy_bcq_activate() {
 	$options = get_option( 'ippy_bcq_options' );
 	$options['comments'] = '1';
 	$options['bbpress'] = '0';
@@ -96,8 +102,21 @@ function ippy_bcq_setting_input() {
 	
 	// echo the field
 	?>
-<p><?php if ( function_exists('is_bbpress') ) { ?>
-<input id='bbpress' name='ippy_bcq_options[bbpress]' type='checkbox' value='<?php echo $valuebb; ?>' <?php if ( ( $valuebb != '0') && !is_null($valuebb) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags on bbPress<br /> <?php } ?>
-<input id='comments' name='ippy_bcq_options[comments]' type='checkbox' value='<?php echo $valuebb; ?>' <?php if ( ( $valueco != '0') && !is_null($valueco) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags on comments
+<p><?php 
+	if ( function_exists('is_bbpress') ) { ?>
+<input id='bbpress' name='ippy_bcq_options[bbpress]' type='checkbox' value='1' <?php if ( ( $valuebb != '0') && !is_null($valuebb) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags for bbPress<br /> <?php } 
+	else { ?>
+	<input type='hidden' id='bbpress' name='ippy_bcq_options[bbpress]' value='0'> <?php } 
+?>
+<input id='comments' name='ippy_bcq_options[comments]' type='checkbox' value='1' <?php if ( ( $valueco != '0') && !is_null($valueco) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags for comments
 	<?php
+}
+
+// Validate user input
+function ippy_bcq_validate_options( $input ) {
+	$valid = array();
+	$valid['comments'] = $input['comments'];
+	$valid['bbpress'] = $input['bbpress'];
+	unset( $input );
+	return $valid;
 }
