@@ -81,6 +81,10 @@ function ippy_bcq_admin_init(){
 		'discussion',               // settings page
 		'default'                   // settings section
 	);
+	$options = get_option( 'ippy_bcq_options' );
+	$options['comments'] = '1';
+	$options['bbpress'] = '0';
+	update_option('ippy_bcq_options', $options);
 }
 
 // Display and fill the form field
