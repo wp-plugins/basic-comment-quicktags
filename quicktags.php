@@ -58,7 +58,7 @@ if( !is_admin() ) {
 add_filter('plugin_row_meta', 'ippy_bcq_donate_link', 10, 2);
 function ippy_bcq_donate_link($links, $file) {
         if ($file == plugin_basename(__FILE__)) {
-                $donate_link = '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ipstenu%40ipstenu%2eorg">Donate</a>';
+                $donate_link = '<a href="https://www.wepay.com/donations/halfelf-wp">Donate</a>';
                 $links[] = $donate_link;
         }
         return $links;
