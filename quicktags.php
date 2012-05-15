@@ -3,7 +3,7 @@
   Plugin Name: Basic Comment Quicktags
   Plugin URI: http://halfelf.org/plugins/basic-comment-quicktags/
   Description: Displays a bold, italic, add link and quote button on top of the comment form
-  Version: 1.3
+  Version: 1.5
   Author: Mika "Ipstenu" Epstein
   Author URI: http://ipstenu.org
 
