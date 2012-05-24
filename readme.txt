@@ -19,6 +19,7 @@ You can turn these on and off for bbPress or comments on the discussions page (s
 **Misc**
 
 * [Plugin Site](http://halfelf.org/plugins/basic-comment-quicktags/)
+* [Basic Support](http://wordpress.org/support/plugin/basic-comment-quicktags)
 * [Donate](https://www.wepay.com/donations/halfelf-wp)
 
 == Frequently Asked Questions ==
