@@ -3,7 +3,7 @@
   Plugin Name: Basic Comment Quicktags
   Plugin URI: http://halfelf.org/plugins/basic-comment-quicktags/
   Description: Displays a bold, italic, add link and quote button on top of the comment form
-  Version: 1.5
+  Version: 1.4
   Author: Mika "Ipstenu" Epstein
   Author URI: http://ipstenu.org
 
@@ -37,16 +37,16 @@ $valuebb = $options['bbpress'];
 $valueco = $options['comments'];
 
   if ( function_exists('is_bbpress') ) {
-	  if ( ( comments_open() && is_singular() || is_bbpress() )  && ( $valuebb != '0') && !is_null($valuebb) ) {
-	    wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
-	    wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
-	    wp_print_styles('editor-buttons');
-	}
+          if ( is_bbpress()  && ( $valuebb != '0') && !is_null($valuebb) ) {
+            wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
+            wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
+            wp_print_styles('editor-buttons');
+        }
   }
-  elseif ( comments_open() && is_singular() && ( $valueco != '0') && !is_null($valueco) ) {
-	    wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
-	    wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
-	    wp_print_styles('editor-buttons');
+  if ( comments_open() && is_singular() && ( $valueco != '0') && !is_null($valueco) ) {
+                    wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
+                    wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
+                    wp_print_styles('editor-buttons');
   }
 }
 
@@ -88,7 +88,7 @@ register_activation_hook( __FILE__, 'ippy_bcq_activate' );
 
 function ippy_bcq_activate() {
 	$options = get_option( 'ippy_bcq_options' );
-	$options['comments'] = '1';
+	$options['comments'] = '0';
 	$options['bbpress'] = '0';
 	update_option('ippy_bcq_options', $options);
 }
