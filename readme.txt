@@ -3,7 +3,7 @@ Contributors: Ipstenu, MarcDK
 Tags: comments, wysiwyg, quicktags, bbpress
 Requires at least: 3.3
 Tested up to: 3.4
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPL2
 Donate Link: https://www.wepay.com/donations/halfelf-wp
 License: GPLv2
@@ -55,6 +55,10 @@ Eventually. I'm not using it right now so it's not <em>as</em> easy to test.
 Yeah, that's because IE8 cheerfully ignores the rules of jQuery. Sometimes it works, sometimes it doesn't. I got it to work, and then came back an hour later to no changes and it broke. At which point I bashed my head into the wall and went to the gym. Between caching and IE8 being inconsistant, I gave up. If anyone can fix it for everyone better than Trepmal did, you officially win. This is as good as I can get it. It works like a hero on Firefox, Safari, Chrome and IE9.
 
 == Changelog ==
+
+= 1.4 = 
+* 2012 June 02, by Ipstenu
+* Reported issue with bbPress. Verified.
 
 = 1.3 = 
 * 2012 May 07, by Ipstenu
