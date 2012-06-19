@@ -46,6 +46,10 @@ No. This plugin uses the <a href="http://codex.wordpress.org/Quicktags_API">Quic
 
 Yes. It can be network activated or per-site, works fine.
 
+= This isn't showing up on bbPress! =
+
+If you're using the bbPress Fancy Editor, it won't work. Really, the fancy editor is 'more' than this, so you shouldn't be using both.
+
 = Will you expand this to BuddyPress? =
 
 Unlikely. BuddyPress is moving to it's own thing.
@@ -85,9 +89,6 @@ Yeah, that's because IE8 cheerfully ignores the rules of jQuery. Sometimes it wo
 * Added failure if not WordPress 3.3 or greater
 
 == Upgrade Notice ==
-
-= 1.5 =
-This plugin no longer supports bbPress, in preparation for bbPress 2.1
 
 = 1.1 =
 Please visit your <em>Discussion Settings</em> page and check the box to turn on the plugin.
