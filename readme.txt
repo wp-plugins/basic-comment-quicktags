@@ -4,9 +4,9 @@ Tags: comments, wysiwyg, quicktags, bbpress
 Requires at least: 3.3
 Tested up to: 3.4
 Stable tag: 1.4
-License: GPL2
 Donate Link: https://www.wepay.com/donations/halfelf-wp
-License: GPLv2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Displays bold, italic, add link and quote buttons on top of the comment form.
 
@@ -48,13 +48,17 @@ Yes. It can be network activated or per-site, works fine.
 
 = Will you expand this to BuddyPress? =
 
-Eventually. I'm not using it right now so it's not <em>as</em> easy to test.
+Unlikely. BuddyPress is moving to it's own thing.
 
 = My users say they don't see anything on IE8 =
 
 Yeah, that's because IE8 cheerfully ignores the rules of jQuery. Sometimes it works, sometimes it doesn't. I got it to work, and then came back an hour later to no changes and it broke. At which point I bashed my head into the wall and went to the gym. Between caching and IE8 being inconsistant, I gave up. If anyone can fix it for everyone better than Trepmal did, you officially win. This is as good as I can get it. It works like a hero on Firefox, Safari, Chrome and IE9.
 
 == Changelog ==
+
+= 1.5 =
+* 2012 June 18, by Ipstenu
+* Curse you, JJJ! (bbPress 2.1 includes its own quicky taggies)
 
 = 1.4 = 
 * 2012 June 02, by Ipstenu
@@ -81,6 +85,9 @@ Yeah, that's because IE8 cheerfully ignores the rules of jQuery. Sometimes it wo
 * Added failure if not WordPress 3.3 or greater
 
 == Upgrade Notice ==
+
+= 1.5 =
+As of bbpress 2.1, this plugin will no longer be needed. It has been coded to degrade nicely.
 
 = 1.1 =
 Please visit your <em>Discussion Settings</em> page and check the box to turn on the plugin.

@@ -3,7 +3,7 @@
   Plugin Name: Basic Comment Quicktags
   Plugin URI: http://halfelf.org/plugins/basic-comment-quicktags/
   Description: Displays a bold, italic, add link and quote button on top of the comment form
-  Version: 1.4
+  Version: 1.5
   Author: Mika "Ipstenu" Epstein
   Author URI: http://ipstenu.org
 
@@ -30,13 +30,19 @@ global $wp_version;
 $exit_msg_ver = 'This plugin requires WordPress 3.3';
 if (version_compare($wp_version,"3.3","<")) { exit($exit_msg_ver); }
 
+// jjj hates me so we have to only exist if bbPress is less than 2.1
+if ( function_exists('is_bbpress') && is_plugin_active('bbpress/bbpress.php') ) { 
+    $ippy_bcq_bbpress = get_plugin_data(ABSPATH . 'wp-content/plugins/bbpress/bbpress.php', false, false);
+    $ippy_bcq_bbpress_version = $ippy_bcq_bbpress['Version'];
+    }
+
 function ippy_bcq_add_scripts() {
 
 $options = get_option('ippy_bcq_options');
 $valuebb = $options['bbpress'];
 $valueco = $options['comments'];
 
-  if ( function_exists('is_bbpress') ) {
+  if ( $ippy_bcq_bbpress_version == '2.0.3' ) {
           if ( is_bbpress()  && ( $valuebb != '0') && !is_null($valuebb) ) {
             wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
             wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
@@ -103,7 +109,7 @@ function ippy_bcq_setting_input() {
 	// echo the field
 	?>
 <p><?php 
-	if ( function_exists('is_bbpress') ) { ?>
+       if ( $ippy_bcq_bbpress_version == '2.0.3' ) { ?>
 <input id='bbpress' name='ippy_bcq_options[bbpress]' type='checkbox' value='1' <?php if ( ( $valuebb != '0') && !is_null($valuebb) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags for bbPress<br /> <?php } 
 	else { ?>
 	<input type='hidden' id='bbpress' name='ippy_bcq_options[bbpress]' value='0'> <?php } 
