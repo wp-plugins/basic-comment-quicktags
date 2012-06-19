@@ -36,7 +36,7 @@ After careful consideration, and a long review of my users, those are the only o
 
 = Will you add in options to pick and chose our tags? =
 
-Not at this time (and not likely either). I don't have a need for it, and I don't want to include code I'm not going to personally make use of. It makes it much harder on me to support it later. (Read <a href="http://www.sohar.com/proj_pub/download/COMPAS93.pdf">Herbert Hecht's article "Rare Conditions – An Important Cause of Failures"</a> to understand my views on including rarely used code. tl;dr: I try not to.)
+No. I don't have a need for it, and I don't want to include code I'm not going to personally make use of. It makes it much harder on me to support it later. (Read <a href="http://www.sohar.com/proj_pub/download/COMPAS93.pdf">Herbert Hecht's article "Rare Conditions – An Important Cause of Failures"</a> to understand my views on including rarely used code. tl;dr: I try not to.)
 
 = Can I use this on older versions of WordPress? =
 
@@ -87,7 +87,7 @@ Yeah, that's because IE8 cheerfully ignores the rules of jQuery. Sometimes it wo
 == Upgrade Notice ==
 
 = 1.5 =
-As of bbpress 2.1, this plugin will no longer be needed. It has been coded to degrade nicely.
+This plugin no longer supports bbPress, in preparation for bbPress 2.1
 
 = 1.1 =
 Please visit your <em>Discussion Settings</em> page and check the box to turn on the plugin.

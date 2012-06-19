@@ -30,25 +30,12 @@ global $wp_version;
 $exit_msg_ver = 'This plugin requires WordPress 3.3';
 if (version_compare($wp_version,"3.3","<")) { exit($exit_msg_ver); }
 
-// jjj hates me so we have to only exist if bbPress is less than 2.1
-if ( function_exists('is_bbpress') && is_plugin_active('bbpress/bbpress.php') ) { 
-    $ippy_bcq_bbpress = get_plugin_data(ABSPATH . 'wp-content/plugins/bbpress/bbpress.php', false, false);
-    $ippy_bcq_bbpress_version = $ippy_bcq_bbpress['Version'];
-    }
-
 function ippy_bcq_add_scripts() {
 
 $options = get_option('ippy_bcq_options');
 $valuebb = $options['bbpress'];
 $valueco = $options['comments'];
 
-  if ( $ippy_bcq_bbpress_version == '2.0.3' ) {
-          if ( is_bbpress()  && ( $valuebb != '0') && !is_null($valuebb) ) {
-            wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
-            wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
-            wp_print_styles('editor-buttons');
-        }
-  }
   if ( comments_open() && is_singular() && ( $valueco != '0') && !is_null($valueco) ) {
                     wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
                     wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
@@ -95,7 +82,6 @@ register_activation_hook( __FILE__, 'ippy_bcq_activate' );
 function ippy_bcq_activate() {
 	$options = get_option( 'ippy_bcq_options' );
 	$options['comments'] = '0';
-	$options['bbpress'] = '0';
 	update_option('ippy_bcq_options', $options);
 }
 
@@ -108,13 +94,7 @@ function ippy_bcq_setting_input() {
 	
 	// echo the field
 	?>
-<p><?php 
-       if ( $ippy_bcq_bbpress_version == '2.0.3' ) { ?>
-<input id='bbpress' name='ippy_bcq_options[bbpress]' type='checkbox' value='1' <?php if ( ( $valuebb != '0') && !is_null($valuebb) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags for bbPress<br /> <?php } 
-	else { ?>
-	<input type='hidden' id='bbpress' name='ippy_bcq_options[bbpress]' value='0'> <?php } 
-?>
-<input id='comments' name='ippy_bcq_options[comments]' type='checkbox' value='1' <?php if ( ( $valueco != '0') && !is_null($valueco) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags for comments
+<p><input id='comments' name='ippy_bcq_options[comments]' type='checkbox' value='1' <?php if ( ( $valueco != '0') && !is_null($valueco) ) { echo ' checked="checked"'; } ?> /> Activate Quicktags for comments
 	<?php
 }
 
