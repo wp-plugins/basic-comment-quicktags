@@ -2,3 +2,6 @@
   width: auto;
   padding: 0.2em 1em;
 } 
+#media-buttons {
+	margin: .5em .5em 0;
+}
