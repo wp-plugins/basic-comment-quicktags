@@ -3,7 +3,7 @@ Contributors: Ipstenu, MarcDK
 Tags: comments, wysiwyg, quicktags, bbpress
 Requires at least: 3.3
 Tested up to: 3.4
-Stable tag: 1.6
+Stable tag: 1.7
 Donate Link: https://www.wepay.com/donations/halfelf-wp
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -60,6 +60,10 @@ Yeah, that's because IE8 cheerfully ignores the rules of jQuery. Sometimes it wo
 
 == Changelog ==
 
+= 1.7 = 
+* 2012 June 29, by Ipstenu (and aahan)
+* Dropping the call for editor.css and including just what we need. <a href="http://wordpress.org/support/topic/plugin-basic-comment-quicktags-why-use-editorcss">Read this thread for why</a>.
+
 = 1.6 = 
 * 2012 June 28, by Ipstenu (and sleary)
 * Booyah! P2 in the hizzouse.
@@ -81,7 +85,7 @@ Yeah, that's because IE8 cheerfully ignores the rules of jQuery. Sometimes it wo
 * bbPress is strange, should work now.
 
 = 1.1 = 
-* 2012 May 02, by Ipstenu
+* 2012 May 02, by Ipstenu (and trepmal)
 * Added options to turn on and off for both comments <em>and</em> bbPress (per request of leeuniverse) - You will <em>only</em> see the bbPress box if you have bbPress installed (so as not to confuse people).
 * Fixed IE being an asshat (props trepmal).
 
