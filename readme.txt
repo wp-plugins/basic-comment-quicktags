@@ -60,6 +60,10 @@ Yeah, that's because IE8 cheerfully ignores the rules of jQuery. Sometimes it wo
 
 == Changelog ==
 
+= 2.0 =
+* 2012 (when I'm done) by Ipstenu
+* More judicious script calling
+
 = 1.7 = 
 * 2012 June 29, by Ipstenu (and aahan)
 * Dropping the call for editor.css and including just what we need. <a href="http://wordpress.org/support/topic/plugin-basic-comment-quicktags-why-use-editorcss">Read this thread for why</a>.
