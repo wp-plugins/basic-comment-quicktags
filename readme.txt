@@ -3,7 +3,7 @@ Contributors: Ipstenu, MarcDK
 Tags: comments, wysiwyg, quicktags, bbpress
 Requires at least: 3.3
 Tested up to: 3.5
-Stable tag: 1.7
+Stable tag: 2.0
 Donate Link: https://www.wepay.com/donations/halfelf-wp
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -61,7 +61,7 @@ Yeah, that's because IE8 cheerfully ignores the rules of jQuery. Sometimes it wo
 == Changelog ==
 
 = 2.0 =
-* 2012 (when I'm done) by Ipstenu
+* 2013 Feb 18, by Ipstenu
 * More judicious script calling
 
 = 1.7 = 

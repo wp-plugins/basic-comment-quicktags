@@ -40,12 +40,12 @@ $ippy_bcq_bbp_fancy = get_option( '_bbp_use_wp_editor' );
   if ( function_exists('is_bbpress') ) {
           if ( is_bbpress()  && ( $valuebb != '0') && !is_null($valuebb) && ($ippy_bcq_bbp_fancy == '0') && !is_admin() ) {
             wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
-            wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
+            wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "2.0");
         }
   }
-  if ( ( $valueco != '0') && !is_null($valueco) && !is_admin() ) {
+  if ( ( $valueco != '0') && !is_null($valueco) && !is_admin() && is_single() ) {
             wp_enqueue_script("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.js", array("quicktags","jquery"), "1.8", 1);
-            wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "1.8");
+            wp_enqueue_style("bcq_quicktags", plugin_dir_url(__FILE__) . "quicktags.css", false, "2.0");
   }
 }
 
