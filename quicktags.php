@@ -65,10 +65,10 @@ if (!class_exists('BasicCommentsQuicktagsHELF')) {
 	    }
 
 		function add_styles() {
-			wp_enqueue_style('wp-grins', plugins_url(dirname(plugin_basename(__FILE__)) . '/quicktags.css'));
+			wp_enqueue_style('basic-comment-quicktags', plugins_url(dirname(plugin_basename(__FILE__)) . '/quicktags.css'));
 		}
 		function add_scripts() {
-			wp_enqueue_script('wp_grins_ssl', plugins_url(dirname(plugin_basename(__FILE__)) . '/quicktags.js'), array("quicktags","jquery"), "3.1", 1); 
+			wp_enqueue_script('basic-comment-quicktags', plugins_url(dirname(plugin_basename(__FILE__)) . '/quicktags.js'), array("quicktags","jquery"), "3.1", 1); 
 		}
 		
 		function add_styles_frontend() {
