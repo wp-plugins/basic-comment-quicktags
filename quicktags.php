@@ -3,7 +3,7 @@
   Plugin Name: Basic Comment Quicktags
   Plugin URI: http://halfelf.org/plugins/basic-comment-quicktags/
   Description: Displays a bold, italic, add link and quote button on top of the comment form
-  Version: 3.0
+  Version: 3.1
   Author: Mika "Ipstenu" Epstein
   Author URI: http://ipstenu.org
 
@@ -53,11 +53,11 @@ if (!class_exists('BasicCommentsQuicktagsHELF')) {
 	    public function init() {
 	
 		    if( !is_admin() ) {
-    			add_action('wp_print_scripts', array( $this,'add_scripts_frontend'),1000);
-    			add_action('wp_print_styles', array( $this,'add_styles_frontend'));
+    			add_action('wp_print_scripts', array( $this,'add_scripts_frontend'));
+    			add_action('wp_print_styles', array( $this,'add_styles_frontend') );
 			}
 			
-			add_action('admin_init', array( $this, 'admin_init'));
+			add_action( 'admin_init', array( $this, 'admin_init'));
 			add_action( 'init', array( $this, 'internationalization' ));
 	        
 	        add_filter('plugin_row_meta', array( $this, 'donate_link'), 10, 2);
@@ -65,10 +65,10 @@ if (!class_exists('BasicCommentsQuicktagsHELF')) {
 	    }
 
 		function add_styles() {
-			wp_enqueue_style('wp-grins', plugins_url(dirname(plugin_basename(__FILE__)) . '/quicktags.css'), false, 3.0);
+			wp_enqueue_style('wp-grins', plugins_url(dirname(plugin_basename(__FILE__)) . '/quicktags.css'));
 		}
 		function add_scripts() {
-			wp_enqueue_script('wp_grins_ssl', plugins_url(dirname(plugin_basename(__FILE__)) . '/quicktags.js'), array("jquery"), 3.0); 
+			wp_enqueue_script('wp_grins_ssl', plugins_url(dirname(plugin_basename(__FILE__)) . '/quicktags.js'), array("quicktags","jquery"), "3.1", 1); 
 		}
 		
 		function add_styles_frontend() {
@@ -82,7 +82,7 @@ if (!class_exists('BasicCommentsQuicktagsHELF')) {
             if ( comments_open() && is_singular() && ( $options['comments'] != '0') && !is_null($options['comments']) ) {
                 $this->add_styles();
             }
-        }		
+        }
 		function add_scripts_frontend() {
     		$options = wp_parse_args(get_option( 'ippy_bcq_options'), $this->bcq_defaults );
     		
