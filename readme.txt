@@ -1,8 +1,8 @@
 === Basic Comment Quicktags ===
 Contributors: Ipstenu, MarcDK
 Tags: comments, wysiwyg, quicktags, bbpress
-Requires at least: 3.3
-Tested up to: 3.6
+Requires at least: 3.5
+Tested up to: 3.7
 Stable tag: 3.1
 Donate Link: https://www.wepay.com/donations/halfelf-wp
 License: GPLv2 or later
