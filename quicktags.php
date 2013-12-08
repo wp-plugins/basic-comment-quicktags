@@ -3,7 +3,7 @@
   Plugin Name: Basic Comment Quicktags
   Plugin URI: http://halfelf.org/plugins/basic-comment-quicktags/
   Description: Displays a bold, italic, add link and quote button on top of the comment form
-  Version: 3.1
+  Version: 3.2
   Author: Mika "Ipstenu" Epstein
   Author URI: http://ipstenu.org
   Text Domain: basic-comment-quicktags
@@ -29,7 +29,7 @@
 */
 
 global $wp_version;
-	if (version_compare($wp_version,"3.5","<")) { exit( __('This plugin requires WordPress 3.5', 'basic-comment-quicktags') ); }
+	if (version_compare($wp_version,"3.7","<")) { exit( __('This plugin requires WordPress 3.7', 'basic-comment-quicktags') ); }
 
 
 if (!class_exists('BasicCommentsQuicktagsHELF')) {
@@ -77,7 +77,7 @@ if (!class_exists('BasicCommentsQuicktagsHELF')) {
     		$options = wp_parse_args(get_option( 'ippy_bcq_options'), $this->bcq_defaults );
     		
     		if ( function_exists('is_bbpress') ) {
-                if ( is_bbpress()  && ( $options['bbpress'] != '0') && !is_null($options['bbpress']) && ($this->bcq_bbp_fancy == '0') ) {
+                if ( is_bbpress()  && ( $options['bbpress'] != '0') && !is_null($options['bbpress']) && ($this->bcq_bbp_fancy == false) ) {
                     $this->add_styles();
                 }
               }
@@ -89,7 +89,7 @@ if (!class_exists('BasicCommentsQuicktagsHELF')) {
     		$options = wp_parse_args(get_option( 'ippy_bcq_options'), $this->bcq_defaults );
     		
     		if ( function_exists('is_bbpress') ) {
-                if ( is_bbpress()  && ( $options['bbpress'] != '0') && !is_null($options['bbpress']) && ($this->bcq_bbp_fancy == '0') ) {
+                if ( is_bbpress()  && ( $options['bbpress'] != '0') && !is_null($options['bbpress']) && ($this->bcq_bbp_fancy == false) ) {
                     $this->add_scripts();
                 }
               }
@@ -122,7 +122,7 @@ if (!class_exists('BasicCommentsQuicktagsHELF')) {
 			// echo the field
 			?>
 		    <a name="bcq" value="bcq"></a><input id='comments' name='ippy_bcq_options[comments]' type='checkbox' value='1' <?php checked( $options['comments'], 1 ); ?> /> <?php _e('Activate Quicktags for comments', 'basic-comment-quicktags');
-		    if ( function_exists('is_bbpress') && ( $this->bcq_bbp_fancy == '0') ) { ?>
+		    if ( function_exists('is_bbpress') && ( $this->bcq_bbp_fancy == false) ) { ?>
 		      <br /><input id='bbpress' name='ippy_bcq_options[bbpress]' type='checkbox' value='1' <?php checked( $options['bbpress'], 1 ); ?> /> <?php _e('Activate Quicktags for bbPress', 'basic-comment-quicktags'); } 
 		}
 		
