@@ -2,8 +2,8 @@
 Contributors: Ipstenu, MarcDK
 Tags: comments, wysiwyg, quicktags, bbpress
 Requires at least: 3.7
-Tested up to: 3.7
-Stable tag: 3.2
+Tested up to: 3.8
+Stable tag: 3.2.1
 Donate Link: https://www.wepay.com/donations/halfelf-wp
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -65,6 +65,10 @@ IE8 cheerfully ignores the rules of jQuery.
 Sometimes it works, sometimes it doesn't. I got it to work, and then came back an hour later to no changes and it broke. At which point I bashed my head into the wall and went to the gym. Between caching and IE8 being inconsistant, I gave up. If anyone can fix it for everyone better than Trepmal did, you officially win. This is as good as I can get it. It works like a hero on Firefox, Safari, Chrome and IE9+, so I strongly suggest for consistant Internet behavior, upgrade IE.
 
 == Changelog ==
+
+= 3.2.1 =
+* 2013 Dec 9, by Ipstenu
+* Force prevent any code from running on login pages.
 
 = 3.2 =
 * 2013 Dec 7, by Ipstenu
