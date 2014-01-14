@@ -151,7 +151,7 @@ if (!class_exists('BasicCommentsQuicktagsHELF')) {
 		// donate link on manage plugin page
 		function donate_link($links, $file) {
     		if ($file == plugin_basename(__FILE__)) {
-        		$donate_link = '<a href="https://www.wepay.com/donations/halfelf-wp">' . __( 'Donate', 'basic-comment-quicktags' ) . '</a>';
+        		$donate_link = '<a href="https://store.halfelf.org/donate/">' . __( 'Donate', 'basic-comment-quicktags' ) . '</a>';
         		$links[] = $donate_link;
             }
             return $links;
