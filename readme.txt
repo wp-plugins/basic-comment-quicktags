@@ -5,7 +5,7 @@ Requires at least: 3.3
 Tested up to: 3.4
 Stable tag: 1.4
 License: GPL2
-Donate Link: https://www.wepay.com/donations/halfelf-wp
+Donate Link: https://store.halfelf.org/donate/
 License: GPLv2
 
 Displays bold, italic, add link and quote buttons on top of the comment form.
@@ -20,7 +20,7 @@ You can turn these on and off for bbPress or comments on the discussions page (s
 
 * [Plugin Site](http://halfelf.org/plugins/basic-comment-quicktags/)
 * [Basic Support](http://wordpress.org/support/plugin/basic-comment-quicktags)
-* [Donate](https://www.wepay.com/donations/halfelf-wp)
+* [Donate](https://store.halfelf.org/donate/)
 
 == Frequently Asked Questions ==
 
