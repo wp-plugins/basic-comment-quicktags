@@ -66,6 +66,10 @@ Sometimes it works, sometimes it doesn't. I got it to work, and then came back a
 
 == Changelog ==
 
+= 3.3.1 =
+* 2014 Sep 16, by Ipstenu
+* Fixed P2.
+
 = 3.3 = 
 * 2014 Sep 5, by Ipstenu
 * Removed P2 Support. it wasn't working and was causing issues with other themes. Sorry.
@@ -145,10 +149,6 @@ Sometimes it works, sometimes it doesn't. I got it to work, and then came back a
 * Added in support for bbPress
 * Added in checks to only load JS/CSS when on a page where one might leave comments
 * Added failure if not WordPress 3.3 or greater
-
-== Upgrade Notice ==
-
-P2 IS NOT LONGER SUPPORTED! I'm really sorry, but P2 is doing weird things.
 
 == Installation ==
 
