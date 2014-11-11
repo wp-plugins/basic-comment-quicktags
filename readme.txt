@@ -26,7 +26,7 @@ You can turn these on and off for bbPress or comments on the discussions page (s
 
 = Why did you do this? =
 
-MarcTV did it because he needed a simple plugin to do this job and decided to do it on his own. I kind of love him for that. 
+MarcTV did it because he needed a simple plugin to do this job and decided to do it on his own. I kind of love him for that.
 
 I forked it so I could extend it to bbPress, put in more checks and ifs/thens, and all the other toolbars were too heavy.
 
@@ -60,17 +60,21 @@ Not at this time.
 
 = My users say they don't see anything on IE8 =
 
-IE8 cheerfully ignores the rules of jQuery. 
+IE8 cheerfully ignores the rules of jQuery.
 
-Sometimes it works, sometimes it doesn't. I got it to work, and then came back an hour later to no changes and it broke. At which point I bashed my head into the wall and went to the gym. Between caching and IE8 being inconsistant, I gave up. If anyone can fix it for everyone better than Trepmal did, you officially win. This is as good as I can get it. It works like a hero on Firefox, Safari, Chrome and IE9+, so I strongly suggest for consistant Internet behavior, upgrade IE.
+Sometimes it works, sometimes it doesn't. I got it to work, and then came back an hour later to no changes and it broke. At which point I bashed my head into the wall and went to the gym. Between caching and IE8 being inconsistent, I gave up. If anyone can fix it for everyone better than Trepmal did, you officially win. This is as good as I can get it. It works like a hero on Firefox, Safari, Chrome and IE9+, so I strongly suggest for decent Internet behavior, upgrade IE.
 
 == Changelog ==
+
+= 3.3.1 b =
+* 2014 Nov 11, by Ipstenu
+* Plugin Icons made by MarcTV!
 
 = 3.3.1 =
 * 2014 Sep 16, by Ipstenu
 * Fixed P2.
 
-= 3.3 = 
+= 3.3 =
 * 2014 Sep 5, by Ipstenu
 * Removed P2 Support. it wasn't working and was causing issues with other themes. Sorry.
 
@@ -114,11 +118,11 @@ Sometimes it works, sometimes it doesn't. I got it to work, and then came back a
 * 2013 Feb 18, by Ipstenu
 * More judicious script calling
 
-= 1.7 = 
+= 1.7 =
 * 2012 June 29, by Ipstenu (and aahan)
 * Dropping the call for editor.css and including just what we need. <a href="http://wordpress.org/support/topic/plugin-basic-comment-quicktags-why-use-editorcss">Read this thread for why</a>.
 
-= 1.6 = 
+= 1.6 =
 * 2012 June 28, by Ipstenu (and sleary)
 * Booyah! P2 in the hizzouse.
 
@@ -126,11 +130,11 @@ Sometimes it works, sometimes it doesn't. I got it to work, and then came back a
 * 2012 June 18, by Ipstenu
 * Curse you, JJJ! (bbPress 2.1 includes its own quicky taggies)
 
-= 1.4 = 
+= 1.4 =
 * 2012 June 02, by Ipstenu
 * Reported issue with bbPress. Verified.
 
-= 1.3 = 
+= 1.3 =
 * 2012 May 07, by Ipstenu
 * Crap, typo'd. Really sorry :(
 
@@ -138,7 +142,7 @@ Sometimes it works, sometimes it doesn't. I got it to work, and then came back a
 * 2012 May 07, by Ipstenu
 * bbPress is strange, should work now.
 
-= 1.1 = 
+= 1.1 =
 * 2012 May 02, by Ipstenu (and trepmal)
 * Added options to turn on and off for both comments <em>and</em> bbPress (per request of leeuniverse) - You will <em>only</em> see the bbPress box if you have bbPress installed (so as not to confuse people).
 * Fixed IE being an asshat (props trepmal).
