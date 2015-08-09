@@ -2,7 +2,7 @@
 Contributors: Ipstenu, MarcDK
 Tags: comments, wysiwyg, quicktags, bbpress
 Requires at least: 3.8
-Tested up to: 4.2
+Tested up to: 4.3
 Stable tag: 3.3.1
 Donate Link: https://store.halfelf.org/donate/
 License: GPLv2 or later
